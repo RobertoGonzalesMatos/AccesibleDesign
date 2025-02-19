@@ -43,8 +43,8 @@ function App() {
       title: "View Order",
       useAsDropTitle: true,
       items: [
-        { label: "Features" },
         { label: "Apps", hasBinaryState: true, binaryState: 1 },
+        { label: "Features" },
       ],
     },
     {
