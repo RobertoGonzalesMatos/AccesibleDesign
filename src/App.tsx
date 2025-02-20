@@ -145,7 +145,7 @@ function App() {
           }}
         >
           <h1 className="text-4xl font-bold mb-4" style={{ color: "white" }}>
-            My Dropdown Journey
+            Redesigning Spotify's Dropdown Menu
           </h1>
           <div style={{ color: "white", width: "350px", fontSize: "large" }}>
             The current webpage will display my journey analyzing, designing and
