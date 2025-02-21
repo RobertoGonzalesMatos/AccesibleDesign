@@ -196,9 +196,8 @@ const Dropdown: React.FC<DropdownProps> = ({
                     tabIndex={0}
                     key={`${idx}-${itemIdx}`}
                     ref={(el) => {
-                      itemsRef.current[
-                        idx * (section.items.length + 1) + itemIdx
-                      ] = el;
+                      itemsRef.current[idx * section.items.length + itemIdx] =
+                        el;
                     }}
                     onClick={() => {
                       !item.disabled && handleSelect(section.title, item, idx);

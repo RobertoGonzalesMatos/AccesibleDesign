@@ -149,7 +149,7 @@ function App() {
           </h1>
           <div style={{ color: "white", width: "350px", fontSize: "large" }}>
             The current webpage will display my journey analyzing, designing and
-            creating my own drop down component.
+            creating my own drop down component inspired by Spotify's dropdown.
           </div>
           <div
             style={{
@@ -187,9 +187,9 @@ function App() {
             <h2 className="section-title">Why Dropdowns Matter</h2>
             <p>
               Dropdowns are a fundamental part of user interfaces, but their
-              design often goes unnoticed—until they don’t work well. By
-              focusing on accessibility and usability, we can create components
-              that work for everyone, not just the majority.
+              design often goes unnoticed—until they don’t work well. In this
+              case we will be analyzing 3 dropdown and then redesigning one of
+              them while incorporating the positive aspects of the otherones.
             </p>
           </section>
           <h2 className="text-2xl font-semibold mb-2">
@@ -280,9 +280,7 @@ function App() {
               balancing usability, efficiency, and accessibility. By analyzing
               existing designs and iterating on their strengths and weaknesses,
               I created a dropdown component that is intuitive, accessible, and
-              efficient. Whether you’re a designer, developer, or just someone
-              interested in UI/UX, I hope this journey inspires you to think
-              critically about the components you use every day.
+              efficient.
             </p>
           </section>
         </div>
