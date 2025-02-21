@@ -61,66 +61,57 @@ function App() {
   const analysisTable: Record<string, Record<string, string>> = {
     GCal: {
       "Interaction Process":
-        "Uses buttons with down arrows; supports TAB navigation for quick actions.",
+        "Uses buttons with down arrows; supports TAB for quick actions.",
       "Functional Capabilities":
-        "Displays modals; supports arrow keys and enter; no drag/drop, no right-click or double-click actions.",
-      "Learnability, Memorability, and Efficiency":
-        "Labeled, consistent UI; efficient but limited; centralized actions make it quick for users to add items but editing requires additional steps.",
-      "Accessibility Comparison":
-        "Screen reader compatible; poor tab order; good color contrast and large font; hover distinctions indicate interactivity.",
-      "Dropdown Selection Behavior":
-        "Expands dropdown with subtle animation growing from the button.",
+        "Modals, arrow keys, and enter supported; no drag/drop or right-click.",
+      "Learnability & Efficiency":
+        "Labeled UI; quick item addition but editing takes extra steps.",
+      Accessibility:
+        "Screen reader compatible; poor tab order; good color contrast; hover highlights.",
+      "Dropdown Behavior": "Expands with subtle animation from button.",
       "Interactable Indicators": "Background lightens on hover.",
-      "Screen Reader Compatibility":
-        "Reads focused items; offers hints for selecting items.",
-      "Tab Selectability and Navigation":
-        "Selectable with TAB but last in cycle; arrow keys don’t work until dropdown is selected.",
-      "Option Selection and Workflow Impact":
-        "Triggers modal upon selection; modal can be navigated with arrow keys and enter.",
-      "Additional Notes":
-        "Hover animations and screen reader hints aid usability.",
-      "Dropdown Annotations": "./images/gcal.png", // Add image path
+      "Screen Reader": "Reads focused items; hints for selection.",
+      "Keyboard Navigation": "TAB-selectable; arrow keys work after selection.",
+      "Workflow Impact": "Triggers a modal navigable by arrow keys & enter.",
+      Notes: "Hover animations and screen reader hints aid usability.",
+      "Dropdown Annotations": "./images/gcal.png",
     },
     Slack: {
       "Interaction Process":
-        "Uses buttons with down arrows; channels display on click; no keyboard navigation to open the dropdown.",
+        "Uses buttons with down arrows; channels open on click; no keyboard dropdown access.",
       "Functional Capabilities":
-        "Displays channels; visually reorders them; no drag/drop, no right-click or double-click actions.",
-      "Learnability, Memorability, and Efficiency":
-        "Nested dropdowns reduce efficiency; can be overwhelming due to too many options.",
-      "Accessibility Comparison":
-        "Screen reader compatible but secondary labels are skipped; no tab access to dropdown.",
-      "Dropdown Selection Behavior": "Simple dropdown without animation.",
+        "Displays & reorders channels; no drag/drop or right-click.",
+      "Learnability & Efficiency":
+        "Nested dropdowns slow navigation; overwhelming options.",
+      Accessibility:
+        "Screen reader compatible but skips secondary labels; no tab access.",
+      "Dropdown Behavior": "Simple dropdown without animation.",
       "Interactable Indicators":
-        "Background lightens and an additional down arrow appears on hover.",
-      "Screen Reader Compatibility":
-        "Reads items but omits 'up to date' notifications.",
-      "Tab Selectability and Navigation":
-        "Not accessible via keyboard; only usable with mouse clicks; arrows work after dropdown is open.",
-      "Option Selection and Workflow Impact":
-        "Changes the right-side panel with selected channel options but side options can be overwhelming.",
-      "Additional Notes":
-        "Visual feedback is clear, but keyboard accessibility is poor.",
-      "Dropdown Annotations": "./images/slack.png", // Add image path
+        "Background lightens; extra down arrow appears on hover.",
+      "Screen Reader": "Reads items but omits 'up to date' notifications.",
+      "Keyboard Navigation": "Mouse-only; arrows work after opening dropdown.",
+      "Workflow Impact":
+        "Updates right panel; side options can be overwhelming.",
+      Notes: "Clear visual feedback, poor keyboard accessibility.",
+      "Dropdown Annotations": "./images/slack.png",
     },
     Spotify: {
       "Interaction Process":
-        "Uses buttons with three dots; toggles sorting features; fully keyboard navigable.",
+        "Uses three-dot buttons; toggles sorting; fully keyboard navigable.",
       "Functional Capabilities":
-        "Supports arrow key navigation, enter selection, and reversible sorting on double-click; no drag/drop or right-click actions.",
-      "Learnability, Memorability, and Efficiency":
-        "Highly intuitive; visible active states with green checkmarks; efficient except for reversible actions requiring a full dropdown cycle.",
-      "Accessibility Comparison":
-        "Fully keyboard and screen reader accessible; easy tab access and good hover indicators.",
-      "Dropdown Selection Behavior": "Simple dropdown with no animation.",
+        "Supports arrow keys, enter, and reversible sorting; no drag/drop or right-click.",
+      "Learnability & Efficiency":
+        "Intuitive; green checkmarks indicate active states.",
+      Accessibility:
+        "Fully keyboard & screen reader accessible; easy tab access.",
+      "Dropdown Behavior": "Simple dropdown, no animation.",
       "Interactable Indicators": "Text lightens to white on hover.",
-      "Screen Reader Compatibility":
-        "Reads items but skips the first option on initial entry.",
-      "Tab Selectability and Navigation":
-        "Easily accessible via TAB (5th in cycle); arrow keys and enter are fully supported.",
-      "Option Selection and Workflow Impact":
-        "Closes dropdown after selection; reversible actions require re-entering the dropdown.",
-      "Dropdown Annotations": "./images/spotify.png", // Add image path
+      "Screen Reader": "Reads items but skips first option on entry.",
+      "Keyboard Navigation":
+        "Easily accessible via TAB; arrow keys & enter fully supported.",
+      "Workflow Impact":
+        "Dropdown closes after selection; reversible actions need re-entry.",
+      "Dropdown Annotations": "./images/spotify.png",
     },
   };
 
@@ -265,14 +256,63 @@ function App() {
               Analysis of Spotify's dropdown workflow
             </h2>
             <img src={"./images/sMouse.png"} className="imageAnalysis" />
+            <h3 className="imageTextSmall">
+              While this worklow works really good for experienced users, having
+              the dropdown close down after every action disencourages
+              exploration for new users.
+            </h3>
             <img src={"./images/sKey.png"} className="imageAnalysis" />
+            <h3 className="imageTextSmall">
+              Same issue here, after every action the dropdown closes.
+              Additionally, when opening the component with tab the first
+              element is not read by the screen reader.
+            </h3>
             <h2 className="imageText">Redesign of Workflow</h2>
-            <img src={"./images/mMouse.png"} className="imageAnalysis" />
             <img src={"./images/mKey.png"} className="imageAnalysis" />
+            <h3 className="imageTextSmall">
+              To solve spotify's issue we will no longer close the dropdown upon
+              interacting with it. Additionally hover options will now hold more
+              information on their respective actions.
+            </h3>
+            <img src={"./images/mMouse.png"} className="imageAnalysis" />
+            <h3 className="imageTextSmall">
+              Just like with the mouse users will be able to re-choose selected
+              options without the dropdown closing. All hover extra info will
+              always display.
+            </h3>
+            <h3 className="imageTextSmall"></h3>
             <h2 className="imageText">Final Dropdown Design</h2>
             <img src={"./images/finald.png"} className="imageAnalysis" />
+            <h3 className="imageTextSmall">
+              As we can see this final design solves many of the issues in
+              spotify's design. The dropdown no longer collapses, a dropdown
+              icon is added for better clarity and also arrow signs are added to
+              indicate whether an option has a binary state. Additionally, I
+              added dynamic aria labels to make sure that users know which items
+              are being hovered, or have already been selected.
+            </h3>
           </div>
 
+          <h2 className="section-title">
+            Reflection on accesibility and mismatches on design
+          </h2>
+          <p>
+            The observed components performed well in usability and
+            accessibility, particularly in being screen reader compatible,
+            having clear labels for users with eyesight impairments, and
+            allowing keyboard-only navigation. However, accessibility gaps
+            included the lack of dynamic ARIA labels (not notifiying when
+            something has already been selected) and dropdowns closing upon
+            selection, which were addressed in my design to enhance screen
+            reader feedback and facilitate seamless keyboard navigation. These
+            improvements help bridge accessibility mismatches by ensuring a more
+            inclusive experience. For example, keyboard-only users struggle with
+            dropdown navigation in Slack, while Spotify’s use of accent-colored
+            icons aids users with visual impairments. Design priorities often
+            favor mouse and mobile users, which can negatively impact keyboard
+            and screen reader accessibility, limiting efficient navigation and
+            usability.
+          </p>
           <section className="conclusion-section">
             <h2 className="section-title">Conclusion</h2>
             <p>
